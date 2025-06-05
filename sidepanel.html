@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>YouTube Transcript Extractor</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 10px; max-width: 400px; }
+        #transcriptContainer { max-height: 400px; overflow-y: auto; margin-top: 10px; }
+        .transcript-segment { padding: 5px; cursor: pointer; }
+        .transcript-segment:hover { background-color: #f0f0f0; }
+        .transcript-segment .timestamp { color: blue; margin-right: 10px; }
+        .transcript-segment.active { background-color: #e0e0ff; }
+        #status { margin-top: 10px; color: green; }
+        #syncControl { margin-top: 10px; }
+        #copyBtn { margin-top: 10px; display: none; }
+        #apiKeyInput { width: 100%; margin-top: 10px; padding: 5px; }
+        #translateBtn { margin-top: 10px; }
+    </style>
+</head>
+<body>
+    <p>Click "Extract Transcript" in the popup to get started.</p>
+    <input type="text" id="apiKeyInput" placeholder="Enter Murf API Key">
+    <button id="translateBtn">Translate to Hindi & Play Audio</button>
+    <div id="transcriptContainer"></div>
+    <div id="syncControl" style="display: none;">
+        <input type="checkbox" id="syncToggle" checked>
+        <label for="syncToggle">Sync with video</label>
+    </div>
+    <button id="copyBtn" style="display: none;">Copy to Clipboard</button>
+    <div id="status"></div>
+    <script src="sidepanel.js"></script>
+</body>
+</html>

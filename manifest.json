@@ -1,0 +1,25 @@
+{
+    "manifest_version": 3,
+    "name": "YouTube Transcript Extractor",
+    "version": "1.0",
+    "description": "Extracts the transcript from the current YouTube video page and translates it to Hindi audio.",
+    "permissions": [
+      "activeTab",
+      "scripting",
+      "tabs",
+      "sidePanel",
+      "https://api.murf.ai/*"
+    ],
+    "action": {
+      "default_popup": "popup.html"
+    },
+    "side_panel": {
+      "default_path": "sidepanel.html"
+    },
+    "content_scripts": [
+      {
+        "matches": ["*://*.youtube.com/watch*"],
+        "js": ["content.js"]
+      }
+    ]
+}
